@@ -52,7 +52,7 @@ namespace KaratsubaMultiplicatorSebasez
                 karatsuba = new LogicLayer.Karatsuba();
                 Int64 multiplicando = Int64.Parse(tbx_muldo.Text.ToString().Trim());
                 Int64 multiplicador = Int64.Parse(tbx_muldor.Text.ToString().Trim());
-                lbl_respuesta.Content = "Respuesta: " + karatsuba.calcular(multiplicando,multiplicador).ToString();
+                lbl_respuesta.Content = "Respuesta: " + karatsuba.calcular(tbx_muldo.Text.ToString().Trim(), tbx_muldor.Text.ToString().Trim()).ToString();
             }
             catch (FormatException Ex)
             {
