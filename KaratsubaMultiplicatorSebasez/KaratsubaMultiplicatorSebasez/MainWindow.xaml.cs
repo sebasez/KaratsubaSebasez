@@ -20,9 +20,44 @@ namespace KaratsubaMultiplicatorSebasez
     /// </summary>
     public partial class MainWindow : Window
     {
+        LogicLayer.Karatsuba karatsuba;
         public MainWindow()
         {
             InitializeComponent();
+            tbx_muldo.Focus();
+        }
+
+        private void tbx_muldo_KeyDown(object sender, KeyEventArgs e)
+        {
+            soloNumeros(e);
+        }
+
+        private static void soloNumeros(KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void tbx_muldor_KeyDown(object sender, KeyEventArgs e)
+        {
+            soloNumeros(e);
+        }
+
+        private void btn_operar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                karatsuba = new LogicLayer.Karatsuba();
+                Int64 multiplicando = Int64.Parse(tbx_muldo.Text.ToString().Trim());
+                Int64 multiplicador = Int64.Parse(tbx_muldor.Text.ToString().Trim());
+                lbl_respuesta.Content = "Respuesta: " + karatsuba.calcular(multiplicando,multiplicador).ToString();
+            }
+            catch (FormatException Ex)
+            {
+                MessageBox.Show(Ex.Message,this.Title +" - Error",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
         }
     }
 }

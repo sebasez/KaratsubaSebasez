@@ -1,7 +1,7 @@
 ﻿<Window x:Class="KaratsubaMultiplicatorSebasez.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        Title="Karatsuba - Sebasez" Height="350" Width="525" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
     	<Grid.Background>
     		<LinearGradientBrush EndPoint="0.994,0.991" StartPoint="0.004,0.003">
@@ -9,6 +9,14 @@
     			<GradientStop Color="#FF003061" Offset="1"/>
     		</LinearGradientBrush>
     	</Grid.Background>
-        
+    	<TextBlock HorizontalAlignment="Center" Height="48" Margin="112.5,27,95.5,245" TextWrapping="Wrap" Text="Karatsuba Calculator" VerticalAlignment="Center" Width="309" TextAlignment="Center" FontSize="32" Foreground="#FFF5F19D"/>
+        <TextBox x:Name="tbx_muldo" HorizontalAlignment="Left" Height="23" Margin="189,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" KeyDown="tbx_muldo_KeyDown"/>
+        <TextBox x:Name="tbx_muldor" HorizontalAlignment="Left" Height="23" Margin="189,173,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" KeyDown="tbx_muldor_KeyDown"/>
+        <Label Content="Multiplicando" HorizontalAlignment="Left" Margin="97,129,0,0" VerticalAlignment="Top" Foreground="#FFFFF4F4"/>
+        <Label Content="Multiplicandor" HorizontalAlignment="Left" Margin="97,169,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lbl_respuesta" Content="" HorizontalAlignment="Left" Margin="97,251,0,0" VerticalAlignment="Top" Width="324.5" Foreground="White" FontSize="16"/>
+        <Button x:Name="btn_operar" Content="Operar" HorizontalAlignment="Left" Margin="210,217,0,0" VerticalAlignment="Top" Width="75" Click="btn_operar_Click"/>
+        <Label Content="Sebasez" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,284,0,0"/>
+
     </Grid>
 </Window>
